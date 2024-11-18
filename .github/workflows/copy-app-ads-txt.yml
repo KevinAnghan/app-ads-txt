@@ -2,8 +2,10 @@ name: Sync app-ads.txt to GitHub Pages
 
 on:
   push:
+    branches:
+      - main  # Trigger on commits to 'main'
     paths:
-      - 'app-ads-txt/app-ads.txt'  # Watch the file in your repo
+      - 'app-ads-txt/app-ads.txt'  # Trigger only if .js files are modified
 
 jobs:
   sync:
