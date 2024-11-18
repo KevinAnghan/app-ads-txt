@@ -1,0 +1,26 @@
+name: Sync app-ads.txt to GitHub Pages
+
+on:
+  push:
+    paths:
+      - 'app-ads-txt/app-ads.txt'  # Watch the file in your repo
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout app-ads-txt repository
+        uses: actions/checkout@v2
+        with:
+          repository: kevinanghan/app-ads-txt
+
+      - name: Copy app-ads.txt to GitHub Pages
+        run: |
+          cp app-ads-txt/app-ads.txt ../kevinanghan.github.io/app-ads.txt
+
+      - name: Commit and Push Changes
+        run: |
+          cd ../kevinanghan.github.io
+          git add app-ads.txt
+          git commit -m "Sync app-ads.txt"
+          git push
