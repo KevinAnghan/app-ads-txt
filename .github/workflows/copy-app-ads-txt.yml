@@ -22,7 +22,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          cd ../
+          cd ./
           git add app-ads.txt
           git commit -m "Sync app-ads.txt"
           git push
