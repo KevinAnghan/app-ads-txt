@@ -18,7 +18,7 @@ jobs:
 
       - name: Copy app-ads.txt to GitHub Pages
         run: |
-          cp app-ads-txt/app-ads.txt ../kevinanghan.github.io/app-ads.txt
+          cp ../kevinanghan.github.io/app-ads-txt/app-ads.txt ../kevinanghan.github.io/app-ads.txt
 
       - name: Commit and Push Changes
         run: |
