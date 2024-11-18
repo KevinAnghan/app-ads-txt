@@ -10,6 +10,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout app-ads-txt repository
         uses: actions/checkout@v2
@@ -18,6 +19,8 @@ jobs:
 
       - name: Copy app-ads.txt to GitHub Pages
         run: |
+          git config --global user.name "Kevin Anghan"
+          git config --global user.email "kevinbanghan@gmail.com"
           cp ./app-ads.txt ../app-ads.txt
 
       - name: Commit and Push Changes
